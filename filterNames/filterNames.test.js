@@ -2,29 +2,29 @@ import { test, expect } from "@jest/globals";
 import { replaceNames, namesArray } from "./filterNames";
 
 const feedbackArray = [
-"Great job, John! Your dedication and hard work are paying off. I appreciate your consistent effort and willingness to go the extra mile. Keep up the excellent work!",
-"Sarah, I wanted to take a moment to acknowledge your outstanding progress. Your commitment to learning and eagerness to challenge yourself have truly paid off. I'm impressed with how far you've come!",
-"Michael, I am incredibly impressed with your skills and work ethic. You consistently demonstrate a high level of professionalism and attention to detail. Your dedication to continuous improvement is admirable. Keep it up!",
-"Emily, your determination and perseverance are truly inspiring. I've noticed how you consistently strive for excellence in your work. Your attention to detail and ability to think critically make you stand out. Keep pushing yourself!",
-"David, I wanted to let you know how proud I am of your progress. Your commitment to learning and your ability to overcome challenges is admirable. Your positive attitude and eagerness to learn make you a standout student. Keep up the fantastic work!",
-"Jessica, I wanted to take a moment to recognize your exceptional growth. Your hard work, enthusiasm, and attention to detail have not gone unnoticed. Your willingness to take on new challenges and seek feedback sets you apart. Keep up the amazing work!",
-"Samuel, I'm incredibly impressed with your dedication and the strides you've made. Your ability to grasp complex concepts and apply them effectively is remarkable. Your eagerness to learn and grow is evident in your work. Keep pushing yourself to new heights!",
-"Olivia, your progress has been nothing short of remarkable. Your attention to detail, critical thinking skills, and willingness to go above and beyond are truly commendable. Your work ethic and determination are an inspiration. Keep up the exceptional work!",
-"Daniel, I wanted to express my appreciation for your consistent efforts and growth. Your ability to grasp new concepts quickly and apply them effectively is impressive. Your positive attitude and willingness to take on challenges make you a valuable member of our team. Keep up the outstanding work!",
-"Sophia, your commitment to learning and your enthusiasm for tackling new challenges are truly impressive. Your work reflects a high level of professionalism and dedication. Your ability to think critically and find innovative solutions sets you apart. Keep pushing the boundaries of your knowledge!"
+"Great job John Your dedication and hard work are paying off. I appreciate your consistent effort and willingness to go the extra mile. Keep up the excellent work!",
+"Sarah I wanted to take a moment to acknowledge your outstanding progress. Your commitment to learning and eagerness to challenge yourself have truly paid off. I'm impressed with how far you've come!",
+"Michael I am incredibly impressed with your skills and work ethic. You consistently demonstrate a high level of professionalism and attention to detail. Your dedication to continuous improvement is admirable. Keep it up!",
+"Emily your determination and perseverance are truly inspiring. I've noticed how you consistently strive for excellence in your work. Your attention to detail and ability to think critically make you stand out. Keep pushing yourself!",
+"David I wanted to let you know how proud I am of your progress. Your commitment to learning and your ability to overcome challenges is admirable. Your positive attitude and eagerness to learn make you a standout student. Keep up the fantastic work!",
+"Jessica I wanted to take a moment to recognize your exceptional growth. Your hard work, enthusiasm, and attention to detail have not gone unnoticed. Your willingness to take on new challenges and seek feedback sets you apart. Keep up the amazing work!",
+"Samuel I'm incredibly impressed with your dedication and the strides you've made. Your ability to grasp complex concepts and apply them effectively is remarkable. Your eagerness to learn and grow is evident in your work. Keep pushing yourself to new heights!",
+"Olivia your progress has been nothing short of remarkable. Your attention to detail, critical thinking skills, and willingness to go above and beyond are truly commendable. Your work ethic and determination are an inspiration. Keep up the exceptional work!",
+"Daniel I wanted to express my appreciation for your consistent efforts and growth. Your ability to grasp new concepts quickly and apply them effectively is impressive. Your positive attitude and willingness to take on challenges make you a valuable member of our team. Keep up the outstanding work!",
+"Sophia your commitment to learning and your enthusiasm for tackling new challenges are truly impressive. Your work reflects a high level of professionalism and dedication. Your ability to think critically and find innovative solutions sets you apart. Keep pushing the boundaries of your knowledge!"
 ];
 
 const feedbackArrayAnon = [
-"Great job, J.Doe! Your dedication and hard work are paying off. I appreciate your consistent effort and willingness to go the extra mile. Keep up the excellent work!",
-"J.Doe, I wanted to take a moment to acknowledge your outstanding progress. Your commitment to learning and eagerness to challenge yourself have truly paid off. I'm impressed with how far you've come!",
-"J.Doe, I am incredibly impressed with your skills and work ethic. You consistently demonstrate a high level of professionalism and attention to detail. Your dedication to continuous improvement is admirable. Keep it up!",
-"J.Doe, your determination and perseverance are truly inspiring. I've noticed how you consistently strive for excellence in your work. Your attention to detail and ability to think critically make you stand out. Keep pushing yourself!",
-"J.Doe, I wanted to let you know how proud I am of your progress. Your commitment to learning and your ability to overcome challenges is admirable. Your positive attitude and eagerness to learn make you a standout student. Keep up the fantastic work!",
-"J.Doe, I wanted to take a moment to recognize your exceptional growth. Your hard work, enthusiasm, and attention to detail have not gone unnoticed. Your willingness to take on new challenges and seek feedback sets you apart. Keep up the amazing work!",
-"J.Doe, I'm incredibly impressed with your dedication and the strides you've made. Your ability to grasp complex concepts and apply them effectively is remarkable. Your eagerness to learn and grow is evident in your work. Keep pushing yourself to new heights!",
-"J.Doe, your progress has been nothing short of remarkable. Your attention to detail, critical thinking skills, and willingness to go above and beyond are truly commendable. Your work ethic and determination are an inspiration. Keep up the exceptional work!",
-"J.Doe, I wanted to express my appreciation for your consistent efforts and growth. Your ability to grasp new concepts quickly and apply them effectively is impressive. Your positive attitude and willingness to take on challenges make you a valuable member of our team. Keep up the outstanding work!",
-"J.Doe, your commitment to learning and your enthusiasm for tackling new challenges are truly impressive. Your work reflects a high level of professionalism and dedication. Your ability to think critically and find innovative solutions sets you apart. Keep pushing the boundaries of your knowledge!"
+"Great job J.Doe Your dedication and hard work are paying off. I appreciate your consistent effort and willingness to go the extra mile. Keep up the excellent work!",
+"J.Doe I wanted to take a moment to acknowledge your outstanding progress. Your commitment to learning and eagerness to challenge yourself have truly paid off. I'm impressed with how far you've come!",
+"J.Doe I am incredibly impressed with your skills and work ethic. You consistently demonstrate a high level of professionalism and attention to detail. Your dedication to continuous improvement is admirable. Keep it up!",
+"J.Doe your determination and perseverance are truly inspiring. I've noticed how you consistently strive for excellence in your work. Your attention to detail and ability to think critically make you stand out. Keep pushing yourself!",
+"J.Doe I wanted to let you know how proud I am of your progress. Your commitment to learning and your ability to overcome challenges is admirable. Your positive attitude and eagerness to learn make you a standout student. Keep up the fantastic work!",
+"J.Doe I wanted to take a moment to recognize your exceptional growth. Your hard work, enthusiasm, and attention to detail have not gone unnoticed. Your willingness to take on new challenges and seek feedback sets you apart. Keep up the amazing work!",
+"J.Doe I'm incredibly impressed with your dedication and the strides you've made. Your ability to grasp complex concepts and apply them effectively is remarkable. Your eagerness to learn and grow is evident in your work. Keep pushing yourself to new heights!",
+"J.Doe your progress has been nothing short of remarkable. Your attention to detail, critical thinking skills, and willingness to go above and beyond are truly commendable. Your work ethic and determination are an inspiration. Keep up the exceptional work!",
+"J.Doe I wanted to express my appreciation for your consistent efforts and growth. Your ability to grasp new concepts quickly and apply them effectively is impressive. Your positive attitude and willingness to take on challenges make you a valuable member of our team. Keep up the outstanding work!",
+"J.Doe your commitment to learning and your enthusiasm for tackling new challenges are truly impressive. Your work reflects a high level of professionalism and dedication. Your ability to think critically and find innovative solutions sets you apart. Keep pushing the boundaries of your knowledge!"
 ]
 
 const negativeFeedbackArray = [
@@ -82,10 +82,19 @@ const positiveFeedbackArrayAnon = [
 
 //TEST FOR KATA ONE
 test.each([
-  [feedbackArray, feedbackArrayAnon, namesArray],
-  [negativeFeedbackArray, negativeFeedbackArrayAnon, namesArray],
-  [positiveFeedbackArray, positiveFeedbackArrayAnon, namesArray]
-])("Calculates the correct average", (feedback, expected, namesArray) => {
+  [feedbackArray, feedbackArrayAnon],
+  [negativeFeedbackArray, negativeFeedbackArrayAnon],
+ 
+])("Checks if the feedback has been correctly anonymised", (feedback, expected) => {
   const actual = replaceNames(feedback, namesArray);
-  expect(actual).toBe(expected);
+  expect(actual).toStrictEqual(expected);
 });
+
+
+//namesArray doesnt need to be paramaterized 
+//edge cases - jest sometimes transforms array if its one-dimennsional 
+
+//combine the anonymised version and the non anonymised version 
+// object of two 
+// {input: , output: }
+//customise the test description
