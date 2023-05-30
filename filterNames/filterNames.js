@@ -15,18 +15,25 @@ export const namesArray = [
     "Sophia",
   ]
 
-export function replaceNames(feedbackArray){
-    const placeholder = "J.Doe";
-    const anonymizedFeedbackArray = feedbackArray.map(feedback => {
-        const words = feedback.split(" ");
-        const anonymizedWords = words.map(word => {
-          if (word.match(/^[a-zA-Z]+$/)) {
-            return placeholder;
+export function replaceNames(feedbackArray, namesArray){
+    for(let i = 0; i < feedbackArray.length; i++){
+      feedbackArray[i].split(" ").map((word)=>{
+        namesArray.forEach((name) => {
+          if(name === word){
+            word = "John Doe"
           }
-          return word;
         });
-        return anonymizedWords.join(" ");
-      });
+      })
+    }
+
     
-      return anonymizedFeedbackArray;
 }
+
+
+//PLAN
+//split each index by word into an array
+//cycle through each index and cross reference it against the name array 
+//if the word does exist replace (reassign that value) it with J.Doe 
+//then rejoin the sentence 
+//once all the index's have been looped through
+//return the updated feedback array
