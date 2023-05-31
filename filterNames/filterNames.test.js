@@ -1,6 +1,7 @@
 import { test, expect } from "@jest/globals";
 import { replaceNames__unstable as replaceNames, namesArray } from "./filterNames";
 
+//basic test
 const unanonymisedFeedback = [
   "Great job John Smith-Jones! Your dedication and hard work are paying off. I appreciate your consistent effort and willingness to go the extra mile. Keep up the excellent work!",
   "Sarah, I wanted to take a moment to acknowledge your outstanding progress. Your commitment to learning and eagerness to challenge yourself have truly paid off. I'm impressed with how far you've come!",
@@ -24,6 +25,7 @@ const unanonymisedFeedback = [
   "Way to go, Sophia! Your commitment to learning and enthusiasm for tackling new challenges are truly impressive. Keep pushing the boundaries of your knowledge!",
 ];
 
+//basic output
 const anonymisedFeedback = [
   "Great job J. Doe! Your dedication and hard work are paying off. I appreciate your consistent effort and willingness to go the extra mile. Keep up the excellent work!",
   "J. Doe, I wanted to take a moment to acknowledge your outstanding progress. Your commitment to learning and eagerness to challenge yourself have truly paid off. I'm impressed with how far you've come!",
@@ -47,6 +49,7 @@ const anonymisedFeedback = [
   "Way to go, J. Doe! Your commitment to learning and enthusiasm for tackling new challenges are truly impressive. Keep pushing the boundaries of your knowledge!",
 ];
 
+//checking whether whitespaces affects the implementation
 const unanonymisedFeedbackWhiteSpace = [
   "Impressed by the dedication shown by John Smith-Jones in his work.",
   "RecognizingSarah Johnson-Wright for her exceptional leadership skills.",
@@ -60,6 +63,7 @@ const unanonymisedFeedbackWhiteSpace = [
   "Sophia Rodriguez, please review your report for any grammatical errors and proofread carefully."
 ];
 
+//whitespace test output
 const anonymisedFeedbackWhiteSpace = [
   "Impressed by the dedication shown by J. Doe in his work.",
   "RecognizingJ. Doe for her exceptional leadership skills.",
@@ -73,6 +77,7 @@ const anonymisedFeedbackWhiteSpace = [
   "J. Doe, please review your report for any grammatical errors and proofread carefully."
 ];
 
+//making sure the implementation takes into account case insensitivity 
 const unanonymisedFeedbackMixedCase = [
   "Impressed by the dedication shown by jOhn sMiTh-JoNes in his work.",
   "Recognizing sAraH JohNsoN-WriGht for her exceptional leadership skills.",
@@ -86,6 +91,7 @@ const unanonymisedFeedbackMixedCase = [
   "soPhia rOdRiguez, please review your report for any grammatical errors and proofread carefully."
 ];
 
+//case insenstivity output
 const anonymisedFeedbackMixedCase = [
   "Impressed by the dedication shown by J. Doe in his work.",
   "Recognizing J. Doe for her exceptional leadership skills.",
@@ -99,11 +105,27 @@ const anonymisedFeedbackMixedCase = [
   "J. Doe, please review your report for any grammatical errors and proofread carefully."
 ];
 
+//checking if the feedback doesn't contain any names that it does not needlessly replace any words.
+const feedbackArrayWithoutNames = [
+  "Great job on completing the project ahead of schedule!",
+  "Your attention to detail is impressive.",
+  "The presentation was clear and concise.",
+  "Your contributions have greatly improved the team's performance.",
+  "Well done on finding a creative solution to the problem.",
+  "Your hard work and dedication are much appreciated.",
+  "Excellent teamwork and collaboration on this project.",
+  "Your innovative ideas have made a significant impact.",
+  "The report is well-researched and comprehensive.",
+  "Your professionalism and strong work ethic are commendable.",
+];
+
+
 //TEST FOR KATA ONE
 test.each([
   [unanonymisedFeedback, anonymisedFeedback],
   [unanonymisedFeedbackWhiteSpace, anonymisedFeedbackWhiteSpace],
-  [unanonymisedFeedbackMixedCase, anonymisedFeedbackMixedCase]
+  [unanonymisedFeedbackMixedCase, anonymisedFeedbackMixedCase], 
+  [feedbackArrayWithoutNames, feedbackArrayWithoutNames]
 ])("Checks if the feedback has been correctly anonymised", (feedback, expected) => {
   const actual = replaceNames(feedback, namesArray);
   expect(actual).toStrictEqual(expected);
