@@ -23,7 +23,7 @@ function createRegularExpression(namesArray) {
   //    naively just split the full name on whitespace (aka into individual name chunks)
   //    return (in the callback) a new array containing: first name, last name, full name
   const flattenedNameChunks = namesArray.flatMap((fullName) => {
-    const nameChunks = [fullName].concat(fullName.split(" "));
+    const nameChunks = [fullName, fullName.split(" ").join("")].concat(fullName.split(" "));
     return nameChunks;
   });
   // map over the flattened array. for each "name chunk":

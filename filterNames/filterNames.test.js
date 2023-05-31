@@ -47,10 +47,63 @@ const anonymisedFeedback = [
   "Way to go, J. Doe! Your commitment to learning and enthusiasm for tackling new challenges are truly impressive. Keep pushing the boundaries of your knowledge!",
 ];
 
+const unanonymisedFeedbackWhiteSpace = [
+  "Impressed by the dedication shown by John Smith-Jones in his work.",
+  "RecognizingSarah Johnson-Wright for her exceptional leadership skills.",
+  "Michael,please ensure attention to detail in your work.",
+  "EmilyWilson's unique perspective adds value to discussions and problem-solving.",
+  "David Brown'spresentations captivate and effectively engage the audience.",
+  "Jessica, your commitment and contributions to the team are commendable.",
+  "Collaboration is one of Samuel Anderson's strengths.",
+  "Olivia Martinez, effective time management is essential for improved productivity.",
+  "Daniel Taylor's meticulousness ensures accurate results.",
+  "Sophia Rodriguez, please review your report for any grammatical errors and proofread carefully."
+];
+
+const anonymisedFeedbackWhiteSpace = [
+  "Impressed by the dedication shown by J. Doe in his work.",
+  "RecognizingJ. Doe for her exceptional leadership skills.",
+  "J. Doe,please ensure attention to detail in your work.",
+  "J. Doe's unique perspective adds value to discussions and problem-solving.",
+  "J. Doe'spresentations captivate and effectively engage the audience.",
+  "J. Doe, your commitment and contributions to the team are commendable.",
+  "Collaboration is one of J. Doe's strengths.",
+  "J. Doe, effective time management is essential for improved productivity.",
+  "J. Doe's meticulousness ensures accurate results.",
+  "J. Doe, please review your report for any grammatical errors and proofread carefully."
+];
+
+const unanonymisedFeedbackMixedCase = [
+  "Impressed by the dedication shown by jOhn sMiTh-JoNes in his work.",
+  "Recognizing sAraH JohNsoN-WriGht for her exceptional leadership skills.",
+  "mIchaEl, please ensure attention to detail in your work.",
+  "EmiLy wilsOn's unique perspective adds value to discussions and problem-solving.",
+  "davId bRowN's presentations captivate and effectively engage the audience.",
+  "jEssica, your commitment and contributions to the team are commendable.",
+  "Collaboration is one of saMuEl aNdeRsoN's strengths.",
+  "oLiviA mArtiNez, effective time management is essential for improved productivity.",
+  "dAnieL tAyloR's meticulousness ensures accurate results.",
+  "soPhia rOdRiguez, please review your report for any grammatical errors and proofread carefully."
+];
+
+const anonymisedFeedbackMixedCase = [
+  "Impressed by the dedication shown by J. Doe in his work.",
+  "Recognizing J. Doe for her exceptional leadership skills.",
+  "J. Doe, please ensure attention to detail in your work.",
+  "J. Doe's unique perspective adds value to discussions and problem-solving.",
+  "J. Doe's presentations captivate and effectively engage the audience.",
+  "J. Doe, your commitment and contributions to the team are commendable.",
+  "Collaboration is one of J. Doe's strengths.",
+  "J. Doe, effective time management is essential for improved productivity.",
+  "J. Doe's meticulousness ensures accurate results.",
+  "J. Doe, please review your report for any grammatical errors and proofread carefully."
+];
+
 //TEST FOR KATA ONE
 test.each([
   [unanonymisedFeedback, anonymisedFeedback],
-  // [negativeFeedbackArray, negativeFeedbackArrayAnon],
+  [unanonymisedFeedbackWhiteSpace, anonymisedFeedbackWhiteSpace],
+  [unanonymisedFeedbackMixedCase, anonymisedFeedbackMixedCase]
 ])("Checks if the feedback has been correctly anonymised", (feedback, expected) => {
   const actual = replaceNames(feedback, namesArray);
   expect(actual).toStrictEqual(expected);
