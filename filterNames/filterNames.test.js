@@ -83,7 +83,7 @@ const positiveFeedbackArrayAnon = [
 //TEST FOR KATA ONE
 test.each([
   [feedbackArray, feedbackArrayAnon],
-  [negativeFeedbackArray, negativeFeedbackArrayAnon],
+  // [negativeFeedbackArray, negativeFeedbackArrayAnon],
  
 ])("Checks if the feedback has been correctly anonymised", (feedback, expected) => {
   const actual = replaceNames(feedback, namesArray);

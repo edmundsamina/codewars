@@ -47,6 +47,7 @@ export const namesArray = [
     return anonArray;
   }
 
+  
 //PLAN
 //dont mutate original array 
 //split each index by word into an array
@@ -55,7 +56,5 @@ export const namesArray = [
 //then rejoin the sentence 
 //once all the index's have been looped through
 //return the updated feedback array
-
-
 //first parameter is each item
 //return array at the end, don't mutate original
